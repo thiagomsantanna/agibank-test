@@ -1,11 +1,20 @@
 import { test as base } from '@playwright/test';
 import { Blog } from '../src/pages/Blog'; // TODO: usar @paths
+import { MailService } from '../src/utils/MailService';
 
 type MyFixtures = {
+	tempEmail: MailService;
 	blog: Blog;
 };
 
 export const test = base.extend<MyFixtures>({
+	tempEmail: async ({}, use) => {
+		// setup
+		const service = new MailService();
+		await service.setup();
+
+		await use(service);
+	},
 	blog: async ({ page }, use) => {
 		// setup
 		const blog = new Blog(page);
