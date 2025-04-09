@@ -1,4 +1,4 @@
-import type { Locator, Page } from '@playwright/test';
+import { expect, type Locator, type Page } from '@playwright/test';
 
 const ICON_NAME = 'Link do ícone de pesquisa';
 const SEARCHBOX_NAME = 'Pesquisar por:';
@@ -39,10 +39,13 @@ export class Blog {
 	}
 
 	async search(term: string) {
-		await this.searchIcon.click();
+		await expect(async () => {
+			await this.searchIcon.click();
 
-		// await this.searchBar.waitFor({ state: 'visible' });
-		await this.searchBar.fill(term);
+			await this.searchBar.waitFor({ state: 'visible', timeout: 2000 });
+			await this.searchBar.fill(term);
+		}).toPass();
+
 		await this.searchBar.press('Enter');
 
 		await this.page.waitForURL(`**/?s=${term}`);
