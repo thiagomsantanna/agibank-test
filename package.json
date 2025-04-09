@@ -6,9 +6,7 @@
   "scripts": {
     "test": "playwright test",
     "test:ui": "playwright test --ui",
-    "test:report": "playwright show-report",
-    "test:report:html": "playwright show-report --report=html",
-    "test:report:json": "playwright show-report --report=json"
+    "test:report": "playwright show-report"
   },
   "keywords": [],
   "author": "",
