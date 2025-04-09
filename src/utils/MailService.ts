@@ -4,7 +4,7 @@ import type { Server } from 'mailosaur/lib/models';
 export class MailService {
 	private readonly client: Mailosaur;
 
-	private defaultServer: Required<Server>;
+	private defaultServer!: Required<Server>;
 
 	constructor() {
 		this.client = new Mailosaur(process.env.MAILOSAUR_API_KEY);

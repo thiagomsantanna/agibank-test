@@ -1,6 +1,6 @@
 import { test as base } from '@playwright/test';
-import { Blog } from '../src/pages/Blog'; // TODO: usar @paths
-import { MailService } from '../src/utils/MailService';
+import { Blog } from '@pages/Blog';
+import { MailService } from '@utils/MailService';
 
 type MyFixtures = {
 	tempEmail: MailService;

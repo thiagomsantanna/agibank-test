@@ -1,4 +1,4 @@
-import { test, expect } from '../config/fixtures';
+import { test, expect } from '@test';
 
 const SUCESS_MESSAGE =
 	"Sucesso! Enviamos um e-mail para confirmar a sua assinatura. Encontre o e-mail agora e clique em 'Confirmar' para iniciar a inscrição.";
