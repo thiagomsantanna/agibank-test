@@ -6,7 +6,10 @@
   "scripts": {
     "test": "playwright test",
     "test:ui": "playwright test --ui",
-    "test:report": "playwright show-report"
+    "test:report": "playwright show-report",
+    "test:browsers": "pnpm exec playwright install --with-deps",
+    "format": "biome check --write",
+    "format:check": "biome check"
   },
   "keywords": [],
   "author": "",
