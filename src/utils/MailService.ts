@@ -11,9 +11,10 @@ export class MailService {
 	}
 
 	async setup() {
+		const serverName = process.env.MAILOSAUR_SERVER || 'Tests';
 		const { items: servers } = await this.client.servers.list();
 		this.defaultServer = servers?.find(
-			(s) => s.name === process.env.MAILOSAUR_SERVER,
+			(s) => s.name === serverName,
 		) as Required<Server>;
 
 		if (!this.defaultServer) throw new Error('No email server found');
