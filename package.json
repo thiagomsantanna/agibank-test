@@ -6,6 +6,7 @@
   "scripts": {
     "test": "playwright test",
     "test:ui": "playwright test --ui",
+    "test:ci": "PLAYWRIGHT_JUNIT_OUTPUT_NAME=junit.xml playwright test --reporter=junit",
     "test:report": "playwright show-report",
     "test:browsers": "pnpm exec playwright install --with-deps",
     "format": "biome check --write",

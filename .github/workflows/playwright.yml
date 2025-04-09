@@ -28,7 +28,14 @@ jobs:
     - name: Install Playwright Browsers
       run: pnpm test:browsers
     - name: Run Playwright tests
-      run: pnpm test
+      run: pnpm test:ci
+    - name: Test Report
+      uses: dorny/test-reporter@v2
+      if: success() || failure()
+      with:
+        name: Tests
+        path: junit.xml
+        reporter: jest-junit
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
