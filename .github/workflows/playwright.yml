@@ -15,6 +15,14 @@ jobs:
     - uses: actions/setup-node@v4
       with:
         node-version: 22.13.0
+    - name: Create env file
+      run: |
+        touch .env
+        echo MAILOSAUR_API_KEY=${MAILOSAUR_API_KEY} >> .env
+        echo MAILOSAUR_SERVER=${MAILOSAUR_SERVER} >> .env
+      env: 
+        MAILOSAUR_API_KEY: ${{ secrets.MAILOSAUR_API_KEY }} 
+        MAILOSAUR_SERVER: ${{ secrets.MAILOSAUR_SERVER }} 
     - name: Install dependencies
       run: npm install -g pnpm && pnpm install
     - name: Install Playwright Browsers
