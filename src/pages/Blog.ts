@@ -36,7 +36,6 @@ export class Blog {
 	async goto() {
 		await this.page.goto('/');
 		await this.page.waitForLoadState('networkidle');
-		console.log(this.page.viewportSize());
 	}
 
 	async search(term: string) {
