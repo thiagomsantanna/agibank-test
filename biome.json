@@ -7,7 +7,7 @@
 	},
 	"files": {
 		"ignoreUnknown": false,
-		"ignore": []
+		"ignore": ["test-results", "package.json"]
 	},
 	"formatter": {
 		"enabled": true,
@@ -20,7 +20,7 @@
 		"enabled": true,
 		"rules": {
 			"recommended": true,
-      "correctness": {
+			"correctness": {
 				"noEmptyPattern": "off"
 			}
 		}

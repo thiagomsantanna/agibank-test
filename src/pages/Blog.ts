@@ -35,13 +35,13 @@ export class Blog {
 
 	async goto() {
 		await this.page.goto('/');
-		await this.page.waitForLoadState('networkidle');
+		await this.page.waitForLoadState('domcontentloaded');
 	}
 
 	async search(term: string) {
 		await this.searchIcon.click();
 
-		await this.searchBar.waitFor({ state: 'visible' });
+		// await this.searchBar.waitFor({ state: 'visible' });
 		await this.searchBar.fill(term);
 		await this.searchBar.press('Enter');
 

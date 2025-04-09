@@ -1,5 +1,5 @@
 import type { Page } from '@playwright/test';
-import { test, expect } from '@test';
+import { expect, test } from '@test';
 
 const SEARCH_TERM = 'agibank';
 

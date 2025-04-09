@@ -1,5 +1,5 @@
-import { test as base } from '@playwright/test';
 import { Blog } from '@pages/Blog';
+import { test as base } from '@playwright/test';
 import { MailService } from '@utils/MailService';
 
 type MyFixtures = {
